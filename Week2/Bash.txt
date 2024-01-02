@@ -1,0 +1,133 @@
+     Bash : 
+
+1 . pwd : present working directory 
+
+2. cd : current directory
+
+3. ls : list the files in the current directory
+
+>  ls directoryName :  to get the list of files of a particular directory 
+
+> ls -l : to list detailed information about files and directories in a specific directory.
+
+>ls -R : list the contents of the specified directory and its subdirectories recursively. 
+(-R: This option recursively lists the contents of directories, including subdirectories.)
+
+>ls -t : list files and directories in a directory in descending order based on their modification time .
+
+>ls -lt : a detailed list of files and directories in the current directory, sorted by the time they were last modified, with the newest ones first.
+
+>ls -la : to also get the hidden files  (-a: This option shows hidden files and directories, which are those whose names start with a dot (.). )
+
+>ls -lRa : a detailed list of all files and directories in the current directory and its subdirectories, including hidden ones, with information about each item presented in the long format. The -R option ensures that the listing includes the contents of all subdirectories recursively.
+
+>ls -lr : a detailed list of files and directories in the current directory, sorted by name in reverse order . 
+
+>ls -s : a simple listing that shows the size and name of each item in the current directory. Note that the size is given in blocks, where each block typically represents 1024 bytes (1 kilobyte).
+
+Say you want to get the list of files that ends with something like .js .json .css .html ....etc : 
+Then Basically there are two method : 
+
+
+1. gist :
+
+>ls -lR | grep .js : this will give all the files ends which the .js and list it recresively . then filter the output using grep to only display lines containing the string ".js".
+
+
+2. Wildcards :
+
+A wildcard is a character or a string of characters used to represent one or more other characters. Wildcards are often used with commands like ls, cp, mv, and rm to perform operations on multiple files at once based on a pattern.
+Common wildcards include:
+    1. * (asterisk): Represents any sequence of characters, including none.
+        ◦ Example: *.txt matches all files ending with ".txt".
+    2. ? (question mark): Represents a single character.
+        ◦ Example: file?.txt matches files like "file1.txt", "fileA.txt", etc.
+    3. [] (square brackets): Represents any single character within the specified range or set.
+        ◦ Example: file[1-3].txt matches "file1.txt", "file2.txt", and "file3.txt".
+    4. {} (curly braces): Represents a group of alternatives.
+        ◦ Example: file{1,2}.txt matches "file1.txt" and "file2.txt".
+Wildcards provide a flexible way to perform operations on multiple files that match a particular pattern, making it easier to work with groups of files without explicitly specifying each one.
+
+
+> ls *.js : List the files which ends with .js . 
+
+
+4. Romove : remove a file or folder
+ 
+> rm -r folder/file 
+
+
+5. chmod : change file permissions
+(Modify the read , write and execute permissions of a file)	
+
+u : user , g : group , o : other , r : read , w : write , x : execute 
+
+> chmod g+wx file/folder   : here “+” means to add write and execute permission in the file/folder to the group “g”  
+
+> chmod u-x file/folder : here “-” means to remove execute premission in the file/folder to the user “u” 
+
+>   4 : read ,  2 : write , 1 : execute 
+
+>chmod 664 1234 
+
+6. echo : the echo command is used to display text or output to the terminal. It is a simple command that takes the text or variables as arguments and prints them to the standard output.
+Here are some basic examples of using the echo command:
+    1. Displaying Text:
+       bashCopy code
+       echo "Hello, World!"
+       This will print "Hello, World!" to the terminal.
+    2. Displaying Variable Values:
+       bashCopy code
+       name="John"
+       echo "My name is $name"
+       If you have a variable named name with the value "John", this will print "My name is John" to the terminal.
+    3. Displaying Multiple Arguments:
+       bashCopy code
+       echo "The quick brown" "fox jumps over the lazy dog."
+       You can provide multiple arguments to echo, and it will concatenate them with spaces between them.
+    4. Display Path : 
+echo $PATH 
+
+
+
+4.mkdir : make new directory ( it make new folder ) 
+
+5. touch : make new files
+
+6. cat : showing the content of the files
+
+7.vi : Edit’s the content file
+
+here firstly to insert / write something type “i” : it stands of insert 
+
+then after writing the content you want to exit : 
+
+To Exit Without Saving : press “esc” + “:” + “q” + “!”
+
+To Exit and also Saving changes : press “esc” + “:” + “w” + “q” + “!”
+
+8.mv : to Move one file to other or one folder to other
+
+mv filetomove wheretomove 
+
+9.cp : to Copy one file/folder to another file/Folder 
+
+File : cp filetomove wheretomove 
+
+Folder : cp -r foldertomove wheretomove 
+
+10.clear : to clear the terminal 
+
+11.nvm : node version manager (use to install latest version of node)
+
+12.npm : node package manager  : manage external dependencies like fs , express . 
+
+The to bring these packages to your machine or in the file we use : 
+
+npm install {dependency name }:   npm install express 
+
+13.node : Use to run node.js files locally 
+
+node index.js 
+
+“node” : Just typing node in the terminal let you write and run node.js code 
