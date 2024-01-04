@@ -4,12 +4,12 @@
 
 const express = require("express")   // Importing express from the express library 
 
-function SumofNumbers(a,b){
+function SumofNumbers(a,b){          // Actual function to perform 
   let sum = a +b ; 
   console.log(sum);
 }
 
-const app = express();
+const app = express();              // create an app instance 
 
 app.get("/", function(req , res){
 const a = req.query.a ; 
