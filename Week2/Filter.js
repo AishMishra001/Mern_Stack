@@ -26,4 +26,4 @@ function filterLogic(n){
 }
 
 let arr1 = arr.filter(filterLogic);
-console.log(arr1)
+console.log(arr1)        
