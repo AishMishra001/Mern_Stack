@@ -6,7 +6,7 @@
 //   arr[i]=arr[i]*2; 
 
 // }
-
+     
 // console.log(arr);
 
 // With map logic : syntax say arr=[] then arr.map(function)   function --> it is the transform logic for indexes 
@@ -18,7 +18,7 @@ function transform(i){
   return i*2 ; 
 }
 
-let arr1 = arr.map(transform);
+let  arr1 = arr.map(transform);
 
 console.log(arr1); 
 
