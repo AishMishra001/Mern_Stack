@@ -1,29 +1,29 @@
-     Bash : 
+                                  Bash : 
 
 1 . pwd : present working directory 
 
 2. cd : current directory
-
-3. ls : list the files in the current directory
-
->  ls directoryName :  to get the list of files of a particular directory 
-
-> ls -l : to list detailed information about files and directories in a specific directory.
-
->ls -R : list the contents of the specified directory and its subdirectories recursively. 
-(-R: This option recursively lists the contents of directories, including subdirectories.)
-
->ls -t : list files and directories in a directory in descending order based on their modification time .
-
->ls -lt : a detailed list of files and directories in the current directory, sorted by the time they were last modified, with the newest ones first.
-
->ls -la : to also get the hidden files  (-a: This option shows hidden files and directories, which are those whose names start with a dot (.). )
-
->ls -lRa : a detailed list of all files and directories in the current directory and its subdirectories, including hidden ones, with information about each item presented in the long format. The -R option ensures that the listing includes the contents of all subdirectories recursively.
-
->ls -lr : a detailed list of files and directories in the current directory, sorted by name in reverse order . 
-
->ls -s : a simple listing that shows the size and name of each item in the current directory. Note that the size is given in blocks, where each block typically represents 1024 bytes (1 kilobyte).
+      
+    • 3. ls : list the files in the current directory
+      
+    • >  ls directoryName :  to get the list of files of a particular directory 
+      
+    • > ls -l : to list detailed information about files and directories in a specific directory.
+      
+    • >ls -R : list the contents of the specified directory and its subdirectories recursively. 
+    • (-R: This option recursively lists the contents of directories, including subdirectories.)
+      
+    • >ls -t : list files and directories in a directory in descending order based on their modification time .
+      
+    • >ls -lt : a detailed list of files and directories in the current directory, sorted by the time they were last modified, with the newest ones first.
+      
+    • >ls -la : to also get the hidden files  (-a: This option shows hidden files and directories, which are those whose names start with a dot (.). )
+      
+    • >ls -lRa : a detailed list of all files and directories in the current directory and its subdirectories, including hidden ones, with information about each item presented in the long format. The -R option ensures that the listing includes the contents of all subdirectories recursively.
+      
+    • >ls -lr : a detailed list of files and directories in the current directory, sorted by name in reverse order . 
+      
+    • >ls -s : a simple listing that shows the size and name of each item in the current directory. Note that the size is given in blocks, where each block typically represents 1024 bytes (1 kilobyte).
 
 Say you want to get the list of files that ends with something like .js .json .css .html ....etc : 
 Then Basically there are two method : 
@@ -49,26 +49,25 @@ Common wildcards include:
 Wildcards provide a flexible way to perform operations on multiple files that match a particular pattern, making it easier to work with groups of files without explicitly specifying each one.
 
 
-> ls *.js : List the files which ends with .js . 
+ls *.js : List the files which ends with .js . 
 
+      
+      4. Romove : remove a file or folder
+      rm -r folder/file 
 
-4. Romove : remove a file or folder
- 
-> rm -r folder/file 
-
-
-5. chmod : change file permissions
-(Modify the read , write and execute permissions of a file)	
-
-u : user , g : group , o : other , r : read , w : write , x : execute 
-
-> chmod g+wx file/folder   : here “+” means to add write and execute permission in the file/folder to the group “g”  
-
-> chmod u-x file/folder : here “-” means to remove execute premission in the file/folder to the user “u” 
-
->   4 : read ,  2 : write , 1 : execute 
-
->chmod 664 1234 
+      5. chmod : change file permissions
+      
+    • (Modify the read , write and execute permissions of a file)	
+      
+    • u : user , g : group , o : other , r : read , w : write , x : execute 
+      
+    • chmod g+wx file/folder   : here “+” means to add write and execute permission in the file/folder to the group “g”  
+      
+    • chmod u-x file/folder : here “-” means to remove execute premission in the file/folder to the user “u” 
+      
+    • 4 : read ,  2 : write , 1 : execute 
+      
+    • chmod 664 1234 
 
 6. echo : the echo command is used to display text or output to the terminal. It is a simple command that takes the text or variables as arguments and prints them to the standard output.
 Here are some basic examples of using the echo command:
@@ -89,34 +88,84 @@ Here are some basic examples of using the echo command:
 echo $PATH 
 
 
+      
+    • 4.mkdir : make new directory ( it make new folder ) 
 
-4.mkdir : make new directory ( it make new folder ) 
 
-5. touch : make new files
 
-6. cat : showing the content of the files
+    • 5. touch : make new files
 
-7.vi : Edit’s the content file
 
-here firstly to insert / write something type “i” : it stands of insert 
 
-then after writing the content you want to exit : 
+    • 6. cat : showing the content of the files
 
-To Exit Without Saving : press “esc” + “:” + “q” + “!”
 
-To Exit and also Saving changes : press “esc” + “:” + “w” + “q” + “!”
 
-8.mv : to Move one file to other or one folder to other
+      7. vi : Edit’s the content file
+      
+    • here firstly to insert / write something type “i” : it stands of insert 
+      
+    • then after writing the content you want to exit : 
+      
+    • To Exit Without Saving : press “esc” + “:” + “q” + “!”
+      
+    • To Exit and also Saving changes : press “esc” + “:” + “w” + “q” + “!”
 
-mv filetomove wheretomove 
 
-9.cp : to Copy one file/folder to another file/Folder 
 
-File : cp filetomove wheretomove 
 
-Folder : cp -r foldertomove wheretomove 
 
-10.clear : to clear the terminal 
+      8.mv : to Move one file to other or one folder to other
+      
+    • mv filetomove wheretomove
+      
+      
+      
+       
+      
+      9.cp : to Copy one file/folder to another file/Folder 
+      
+    • File : cp filetomove wheretomove 
+      
+    • Folder : cp -r foldertomove wheretomove 
+
+
+
+
+      
+      10.clear : to clear the terminal 
+
+      11. Head : it gives the first 10 lines of the file
+      
+    •  head fileName 
+      
+    • head -nooflines filename : it will give you the lines from the start to the nooflines you will mention ( start ------ nooflines )  
+
+      12. Tail : it gives the last 10 lines of the file
+      
+    • tail fileName 
+
+
+11. wc (word count) : The wc (word count) command in Bash is used to count the number of lines, words, and bytes in a file or input stream. It can also be used to count the number of characters.
+Here is the basic syntax of the wc command:
+wc [options] [file(s)]
+
+: wc filename   output : lineCount WordCount CharacterCount 
+
+Commonly used options include:
+    • -l: Count the number of lines.
+    • -w: Count the number of words.
+    • -c: Count the number of bytes.
+    • -m: Count the number of characters.
+
+Pipe Operator “|” : command 1 | command 2 : the output of command 1 flows to command 2 .  
+
+: tail -n +25 demo | head -5 : It gives the the line from 25 --- 30 , basically from 25 so then command 2 considers it as head and gives next 5 lines 
+
+GREP : 
+The grep command in Bash is used to search for patterns in text. It stands for "Global Regular Expression Print." grep searches through files or input streams for lines that match a specified pattern and then prints those lines.
+
+grep “one” fileName : give the occurance of one in the file 
 
 11.nvm : node version manager (use to install latest version of node)
 
@@ -130,4 +179,5 @@ npm install {dependency name }:   npm install express
 
 node index.js 
 
-“node” : Just typing node in the terminal let you write and run node.js code 
+“node” : Just typing node in the terminal let you write and run node.js code 1
+	
