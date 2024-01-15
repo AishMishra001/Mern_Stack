@@ -12,6 +12,21 @@ const app = express();
 
 const schema = zod.array(zod.number());
 
+// {
+//   email : string => email 
+//   password : atleast 8 letters 
+//   country : "IN" , "US"
+// }
+
+const schema1 = zod.object({
+  email : zod.string(),
+  password : zod.string(),
+  country : z.lateral("IN").or(z.lateral("US")),
+  kidneys : z.array(z.number())
+})
+
+
+
 app.use(express.json()); 
 
 app.post("/health-checkup", function(req,res){
