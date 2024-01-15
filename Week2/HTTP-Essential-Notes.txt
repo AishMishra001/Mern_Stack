@@ -1,0 +1,29 @@
+HTTP ESSENTIAL TRAINING 
+
+1. HTTP: hypertext Transfer Protocal : 
+Ideal : 
+                                  every HTTP > HTTPS using HTTP/2 protocol 
+  Real : 
+                                           most HTTP > HTTPS over HTTP/2 
+                                                              > Unencrypted HTTP/1.1 
+
+Terminology
+
+Browser : Application used to access and navigate between HTML documents 
+User Agent : Application acting on behalf of the user – literally an agent of the user – typically a brower . 
+TCP ( Transmission Control Protocol ) : one of the main internet protocols used by the 
+World Wide Web , email , FTP and remote administration .
+IP ( Internet Protocol ) : IP is used to actually transfer data between computers over a network . Every device connected to the internet has an IP address . 
+URL ( Uniform Resource Locator ) : an address pointing at a resource on the web . Human readable  address describing where on the web a particular resource is located . 
+DNS ( Domain Name Server ) : DNS catalogs all domain name URLs and points them to the IP addresses of servers . 
+Resource : The file or files available on a server when following a URL 
+Server : Computer on the internet running some form of data storage and sharing application , most commonly a web server application . 
+Proxy : Software or Hardware service acting as a middle person between clients and servers . 
+Request-Response Pairs : Clients and servers communicate over HTTP using request-response pairs . A request is sent , and a response is returned . 
+Header : Requests and responsed use HTTP headers to pass information back and forth .
+HTTP Request Method/Verb : Every HTTP request contains a method –a.k.a a verb –explaining what action the sender wants to perform on the resource . 
+Status Response Code : Numerical code in the 100 to 500 range describing what type of response the server sent back to the client . 
+Cache : Method for storing data on the client or the server to speed up performance .
+Stateless : HTTP is stateless , meaning every request and response is unique , and no state is stored .
+Cookie : String of data passed back and forth between the client and server to create a stateful session. 
+Session : Clients and servers can share information about states by passing information back and forth , creating a session . 
