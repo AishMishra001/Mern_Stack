@@ -10,5 +10,4 @@ try{
 catch{
    console.log("so error has come hence it is log");
 }
-
 console.log('even it error comes because we are using try-catch this is still logged');

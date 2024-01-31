@@ -1,0 +1,40 @@
+<!-- Fetch : In backend development, "fetch" commonly refers to making requests to external resources or APIs to retrieve data. It's a process where a backend server sends a request to another server or service, typically over HTTP or a similar protocol, to fetch data or perform some action. -->
+
+
+<!-- api :: https://fakerapi.it/api/v1/persons  -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>fetching</title>
+</head>
+<body>
+  <script>
+    // Method 1 : 
+    // function getData(){
+    //   fetch("https://fakerapi.it/api/v1/persons").then(function(response){
+    //     response.json()
+    //     .then(function(finalData){
+    //       console.log(finalData);
+    //     })
+    //   })
+    // }
+      // Method 2 : using async await syntax : 
+
+     async function getData(){
+        const response = await fetch("https://fakerapi.it/api/v1/persons");
+        const finalData = await response.json(); 
+        console.log(finalData);
+        document.querySelector(".response").innerHTML = JSON.stringify(finalData, null, 2);  ; 
+      }
+  </script>
+
+  <button onclick="getData()">Get Data</button>
+  <div class="response">
+
+  </div>
+</body>
+</html>
+

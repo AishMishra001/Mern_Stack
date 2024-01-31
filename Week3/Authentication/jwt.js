@@ -7,7 +7,7 @@ const jwt = require("jsonwebtoken");
 
 const value ={
   name: "Aish Mishra" , 
-  accountnumber : 123123123 
+  accountnumber : 123123123  
 }
 // function to generate is .sign()
 const token =  jwt.sign(value ,"secret"); 
