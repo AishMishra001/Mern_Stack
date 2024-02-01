@@ -23,9 +23,10 @@ Returns 403 status code if not
 
 const express = require("express");
 const jwt = require("jsonwebtoken");
-const jwtPassword = "123456";
+const jwtSecret = "shhhhh";
 
 const app = express();
+app.use(express.json());
 
 const ALL_USERS = [
   {
@@ -46,15 +47,7 @@ const ALL_USERS = [
 ];
 
 function userExists(username, password) {
-  // write logic to return true or false if this user exists
-  // in ALL_USERS array 
-  const userExist = false ; 
-  for(let i=0 ; i<ALL_USERS.length ; i++){
-    if(username == ALL_USERS[i].username && password == ALL_USERS[i].password){
-        userExist = true ; 
-    }
-  }
-  return userExist ; 
+  return ALL_USERS.some(user => username === user.username && password === user.password);
 }
 
 app.post("/signin", function (req, res) {
@@ -63,11 +56,11 @@ app.post("/signin", function (req, res) {
 
   if (!userExists(username, password)) {
     return res.status(403).json({
-      msg: "User doesnt exist in our in memory db",
+      msg: "User doesn't exist in our in-memory database",
     });
   }
 
-  var token = jwt.sign({ username: username }, "shhhhh");
+  const token = jwt.sign({ username: username }, jwtSecret);
   return res.json({
     token,
   });
@@ -75,15 +68,25 @@ app.post("/signin", function (req, res) {
 
 app.get("/users", function (req, res) {
   const token = req.headers.authorization;
+
   try {
-    const decoded = jwt.verify(token, jwtPassword);
+    const decoded = jwt.verify(token, jwtSecret);
     const username = decoded.username;
-    // return a list of users other than this username
-  } catch (err) {
-    return res.status(403).json({
-      msg: "Invalid token",
+
+    // Your logic to fetch other users
+    const otherUsers = ALL_USERS.filter(user => user.username !== username);
+
+    // Return the list of other users
+    res.json({
+      users: otherUsers
+    });
+  } catch (error) {
+    res.status(403).json({
+      msg: "Invalid token"
     });
   }
 });
 
-app.listen(3000)
+app.listen(3000);
+  
+  // Return the list of other users

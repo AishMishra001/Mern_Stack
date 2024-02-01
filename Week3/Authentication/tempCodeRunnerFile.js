@@ -1,2 +1,1 @@
-const token =  jwt.sign(value ,"secret"); 
-// console.log(token);
+const otherUsers = ALL_USERS.filter(user => user.username !== username);
