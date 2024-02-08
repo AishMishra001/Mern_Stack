@@ -34,4 +34,19 @@ app.get("/ride1",(req,res)=>{
   }
 )
 
+app.get("/ride2",(req,res)=>{
+  
+
+    res.json({
+      msg:"you have successfully rided ride 2"
+  
+
+    })
+
+  
+  }
+)
+
+
+
 app.listen(3000);
