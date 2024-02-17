@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM</title>
+  <style>
+    .body {
+      display: flex;
+      flex-direction: column;
+    }
+    .input1{
+      margin: 10px;
+    }
+    .input2{
+      margin: 10px;
+    }
+   
+  </style>
+</head>
+
+<body>
+  <script>
+    function Sum(){
+     const a = parseFloat(document.querySelector(".input1").value)
+     const b = parseFloat(document.querySelector(".input2").value)
+    //  let result = ele1 + ele2 ; 
+    //  document.querySelector(".para").innerHTML = "Sum : " + result ; 
+    fetch("https://sum-server.100xdevs.com/sum?a="+a+"&b="+b );
+}
+  </script>
+
+
+  <div class="body">
+
+
+
+    <span> <input type="text" class="input1"></span>
+    <br>
+    <span> <input type="text" class="input2"></span>
+    <br>
+    <span> <button onclick="
+       Sum(); 
+    ">Calculate Sum</button></span>
+    <br>
+    <p class="para"></p>
+  </div>
+
+</body>
+
+</html>
