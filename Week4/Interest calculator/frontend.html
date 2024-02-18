@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interest Calculator</title>
+</head>
+<body>
+  <script>
+    async function simpleInterest(){
+      let p = document.getElementById("principal").value ; 
+      let r = document.getElementById("rate").value ; 
+      let t = document.getElementById("time").value ; 
+     
+      const result =  await fetch("http://localhost:3000/simpleInterest?p="+p+"&r="+r+"&t="+t); 
+      const final =  await result.text();
+      document.getElementById("Result").innerHTML = final ; 
+
+    }
+  </script>
+
+
+  <input type="text" class="input" id="principal" placeholder="enter principal" oninput="simpleInterest()">
+  <input type="text" class="input" id="rate" placeholder="enter rate" oninput="simpleInterest()">
+  <input type="text" class="input" id="time" placeholder="enter time" oninput="simpleInterest()">
+  <br>
+  <p id="Result"></p>
+</body>
+</html>
+
