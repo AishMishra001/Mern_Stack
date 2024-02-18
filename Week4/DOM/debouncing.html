@@ -1,0 +1,72 @@
+<!--
+Debouncing:
+Debouncing is a method used to ensure that a function is not called more often than a certain time interval, even if the event that triggers the function occurs more frequently. 
+
+Throttling:
+Throttling is similar to debouncing in that it limits the rate at which a function can be executed, but it does so by ensuring that the function is only called at most once every specified interval. 
+
+Here we are creating a Debouncing function so to reduce the number of backend  request calls 
+oninput ="" : to send backend request without using the calculate button as onclick we use oninput we call the backend everytime input is written . 
+
+Then created an bouncing function which call the main function when it is not called for 1 sec and if called between 1 sec it starts the timer again from zero 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM</title>
+  <style>
+    .body {
+      display: flex;
+      flex-direction: column;
+    }
+    .input1{
+      margin: 10px;
+    }
+    .input2{
+      margin: 10px;
+    }
+   
+  </style>
+</head>
+
+<body>
+  <script>
+    
+    let timeout ; 
+    function debounceSum(){
+       clearTimeout(timeout);
+       timeout = setTimeout(() => {
+         Sum();
+       }, 1000);
+    }
+
+
+     async function Sum(){
+      const a = parseFloat(document.querySelector(".input1").value)
+     const b = parseFloat(document.querySelector(".input2").value)
+    const response = await fetch("https://sum-server.100xdevs.com/sum?a="+a+"&b="+b )
+    const ans = await response.text() ; 
+        document.getElementById("para").innerHTML = ans ; 
+     }
+  </script>
+
+
+  <div class="body">
+
+
+
+    <span> <input oninput="debounceSum()" type="text" class="input1"></span>
+    <br>
+    <span> <input oninput="debounceSum()" type="text" class="input2"></span>
+    <br>
+    
+    <p id="para"></p>
+  </div>
+
+</body>
+
+</html>
