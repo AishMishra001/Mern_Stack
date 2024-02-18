@@ -22,13 +22,30 @@
 
 <body>
   <script>
-    function Sum(){
-     const a = parseFloat(document.querySelector(".input1").value)
+//     function Sum(){
+//      const a = parseFloat(document.querySelector(".input1").value)
+//      const b = parseFloat(document.querySelector(".input2").value)
+//     //  let result = ele1 + ele2 ; 
+//     //  document.querySelector(".para").innerHTML = "Sum : " + result ; 
+//     fetch("https://sum-server.100xdevs.com/sum?a="+a+"&b="+b )
+//     .then(function(response){
+//      response.text()
+//       .then(function(ans){
+//         document.getElementById("para").innerHTML = ans ; 
+//       })
+//     });
+// }
+
+     async function Sum(){
+      const a = parseFloat(document.querySelector(".input1").value)
      const b = parseFloat(document.querySelector(".input2").value)
-    //  let result = ele1 + ele2 ; 
-    //  document.querySelector(".para").innerHTML = "Sum : " + result ; 
-    fetch("https://sum-server.100xdevs.com/sum?a="+a+"&b="+b );
-}
+    const response = await fetch("https://sum-server.100xdevs.com/sum?a="+a+"&b="+b )
+    const ans = await response.text() ; 
+        document.getElementById("para").innerHTML = ans ; 
+
+
+
+     }
   </script>
 
 
@@ -44,7 +61,7 @@
        Sum(); 
     ">Calculate Sum</button></span>
     <br>
-    <p class="para"></p>
+    <p id="para"></p>
   </div>
 
 </body>
