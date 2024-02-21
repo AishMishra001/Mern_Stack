@@ -1,0 +1,41 @@
+<!-- Here is the react way of writing is counter button where you have to define the state , components and rerender  -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>React way of counter</title>
+</head>
+<body>
+  <div id="buttonParent"></div>
+  <script>
+    
+    const state ={
+      count : 0 
+    }
+
+    function onButtonPress(){
+      state.count++ ; 
+      buttonComponentReRender()  ; 
+    }
+
+    function buttonComponentReRender(){
+      document.getElementById("buttonParent").innerHTML = "" ; 
+      const component = buttonComponent(state.count) ;
+      document.getElementById("buttonParent").appendChild(component); 
+    }
+
+    function buttonComponent(count){
+      const button = document.createElement("button") ;
+      button.innerHTML = `Counter ${count}`; 
+      button.setAttribute("onclick",`onButtonPress()`) ; 
+      return button ; 
+    }
+
+    buttonComponentReRender();
+
+  </script>
+</body>
+</html>
