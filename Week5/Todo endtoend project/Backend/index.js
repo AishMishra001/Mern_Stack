@@ -31,9 +31,22 @@ app.post("/todo",async function(req,res){
 
 app.get("/todos",async function(req,res){
    const todos = await todo.find({})   // .find() will get everything from the database
-   res.json({
-    todos 
-   })
+   try{
+
+     if(todos){
+       res.json({
+        todos 
+       })
+      }
+  else{
+    res.json({
+      msg : "No Todos present"
+    })
+  }
+   }catch(e){
+    console.log(e);
+   }
+
 })
 
 app.put("/completed",function(req,res){
