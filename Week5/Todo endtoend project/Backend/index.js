@@ -3,8 +3,11 @@ const app = express() ;
 const {createTodo , updateTodo } = require("./types") ; // Imported createTodo from types.js file  
 const { todo } = require("./database");
 const { rmSync } = require("graceful-fs");
+const cors = require("cors") ; 
 
 app.use(express.json()) ; 
+
+app.use(cors()) ; 
 
 // 3 routes : /todo /todos /completed 
 
@@ -49,23 +52,32 @@ app.get("/todos",async function(req,res){
 
 })
 
-app.put("/completed",function(req,res){
-     const updatedPayload = req.body ; 
-     const parsedPayload = updateTodo.safeParse(updatedPayload); 
-     if(!parsedPayload.success){
-      res.status(403).json({
-        msg : "You sent the wrong input"
-      })
-      todo.update({
-        _id : req.body.id 
-      },{
-        completed : true 
-      })
+app.put("/completed", async function(req, res) {
+  const updatedPayload = req.body;
+  const parsedPayload = updateTodo.safeParse(updatedPayload);
+  if (!parsedPayload.success) {
+      return res.status(403).json({
+          msg: "You sent the wrong input"
+      });
+  }
+
+  try {
+      await todo.updateOne({
+          _id: req.body.id
+      }, {
+          completed: true
+      });
       res.json({
-        msg : "Todo marked as completed" 
-      })
-     }     
-})
+          msg: "Todo marked as completed"
+      });
+  } catch (error) {
+      console.error("Error updating todo:", error);
+      res.status(500).json({
+          msg: "Internal Server Error"
+      });
+  }
+});
+
 
 // .update({query(getting what need to update)},{update( updating what we get )})
 
