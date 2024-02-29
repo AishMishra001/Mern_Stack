@@ -45,5 +45,3 @@ Feel free to explore the code and documentation for each week's progress. If you
 Let's connect! If you're passionate about tech or interested in collaborating on exciting projects, feel free to reach out via [LinkedIn]https://www.linkedin.com/in/aish-mishra-b24a52237/ or [Twitter] https://twitter.com/AishMishra17.
 
 ---
-
-Feel free to customize the README further with additional information or links as needed!
