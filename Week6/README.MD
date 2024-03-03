@@ -23,9 +23,10 @@
 
 4.There is another way to handle it issue by using React.memo()
 
-5.
-React.memo() is a higher-order component provided by React that you can use to memoize functional components.
+5.React.memo() is a higher-order component provided by React that you can use to memoize functional components.
 
 6.Memoization in this context means that React will only re-render the component if its props have changed. 
 
 7.This can be helpful in optimizing performance, especially for components that are expensive to render but have the same output given the same props.
+
+  <!-- jsx -->
