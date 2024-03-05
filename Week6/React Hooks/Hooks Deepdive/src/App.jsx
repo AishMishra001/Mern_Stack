@@ -31,6 +31,9 @@ const Header = React.memo(function Header({title}){
     {title}
   </div>
   })
+  // React.memo will only re-render if the props are changed i.e., it checks for shallow equality
+// If you want to force re-rendering even when there is no change in props then use useCallback or useMemo hooks 
+// If you want to force re-rendering even when props are not changed then you can pass a function as second argument to memo like 
 
 
 export default App
