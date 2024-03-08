@@ -21,12 +21,16 @@
 
 3. Why can't we put it in 6 itself? because it can only go down in the tree not up means that if we put the state varible in 6 itself and say it is needed in 5 so there won't be any way to do so 
 
-4.There is another way to handle it issue by using React.memo()
+4. There is another way to handle it issue by using React.memo()
 
-5.React.memo() is a higher-order component provided by React that you can use to memoize functional components.
+5. React.memo() is a higher-order component provided by React that you can use to memoize functional components.
 
-6.Memoization in this context means that React will only re-render the component if its props have changed. 
+6. Memoization in this context means that React will only re-render the component if its props have changed. 
 
-7.This can be helpful in optimizing performance, especially for components that are expensive to render but have the same output given the same props.
+7. This can be helpful in optimizing performance, especially for components that are expensive to render but have the same output given the same props.
 
-  <!-- jsx -->
+8. When rendering a list of items in React, it's important to provide a unique key to each item in the list. The key prop is a special string attribute you can add to the elements in the list.
+
+9. The key prop helps React identify which items have changed, added, or removed. React uses the key prop to efficiently update and render the list of items.
+
+10. When the key prop changes, React will create a new DOM element for that item. If the key prop remains the same, React will update the existing DOM element instead of recreating it.
