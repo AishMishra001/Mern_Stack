@@ -34,3 +34,13 @@
 9. The key prop helps React identify which items have changed, added, or removed. React uses the key prop to efficiently update and render the list of items.
 
 10. When the key prop changes, React will create a new DOM element for that item. If the key prop remains the same, React will update the existing DOM element instead of recreating it.
+
+11. useEffect Hook : 
+
+Here is the syntax for the useEffect hook in React:
+
+useEffect(callback, [dependencies]);
+
+callback: A function containing the side effects to perform. This function will be executed after the component is rendered and when its dependencies change.
+
+dependencies: An array of variables that the effect depends on. If this array is empty, the effect will run only once, after the initial render (component mount). If this array contains variables, the effect will run after the initial render and then whenever any of the variables in the array change.
