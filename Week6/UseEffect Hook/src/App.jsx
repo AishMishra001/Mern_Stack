@@ -10,12 +10,14 @@ function App() {
 
 
 useEffect(() => {
-  fetch("https://sum-server.100xdevs.com/todos")
-    .then(async (res) => {
-      const json = await res.json();
-      setTodos(json.todos);
-    })
-}, [])
+  setInterval(() => {
+    fetch("https://sum-server.100xdevs.com/todos")
+      .then(async (res) => {
+        const json = await res.json();
+        setTodos(json.todos);
+      })
+    }, 10000);
+  }, [])
 
   return <div>
       {todos.map(({id,title,description})=><Todo key={id} title={title} description={description}></Todo>)}
