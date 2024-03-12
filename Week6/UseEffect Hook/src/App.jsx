@@ -1,4 +1,4 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 
 
 function App() {
@@ -9,27 +9,26 @@ function App() {
 // To run a side effect specifically when a component mounts, you can pass an empty dependency array [] to the useEffect hook. In this case, the effect will run only once, after the initial render (component mount).
 
 
-  useEffect(() => {
-    fetch("https://sum-server.100xdevs.com/todos")
-      .then(async function(res) {
-        const json = await res.json();
-        setTodos(json.todos);
-      })
-  }, [])
+useEffect(() => {
+  fetch("https://sum-server.100xdevs.com/todos")
+    .then(async (res) => {
+      const json = await res.json();
+      setTodos(json.todos);
+    })
+}, [])
 
   return <div>
-      {todos.map((todo)=><Todo key={todo.id} title={todo.title} description={todo.description}></Todo>)}
+      {todos.map(({id,title,description})=><Todo key={id} title={title} description={description}></Todo>)}
     </div>
   
 }
 
 function Todo({ title, description }) {
-  return (
-    <div>
+  return <div>
       <h1>{title}</h1>
       <h3>{description}</h3>
     </div>
-  );
+  ;
 }
 
 export default App;
