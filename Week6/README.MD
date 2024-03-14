@@ -44,3 +44,46 @@ useEffect(callback, [dependencies]);
 callback: A function containing the side effects to perform. This function will be executed after the component is rendered and when its dependencies change.
 
 dependencies: An array of variables that the effect depends on. If this array is empty, the effect will run only once, after the initial render (component mount). If this array contains variables, the effect will run after the initial render and then whenever any of the variables in the array change.
+
+12. Side effects in react : 
+
+In React, a "side effect" generally refers to any action that a component performs in addition to rendering its output, such as:
+
+Fetching data from an API or server
+Updating the browser's URL or title
+Setting up event listeners or timers
+Manipulating the DOM directly
+Updating some global state outside of React
+Side effects are typically handled in React using the useEffect hook 
+
+13. React Hooks : 
+Hooks are a new addition in React 16.8 that let you use state and other React features without writing a class. They are functions that "hook into" React state and lifecycle methods from functional components . 
+
+React provides a few built-in Hook : 
+
+useState
+useEffect
+useContext
+useReducer
+useCallback
+useMemo
+useRef
+useImperativeHandle
+useLayoutEffect
+useDebugValue
+
+14. Lifecycle methods : 
+Lifecycle methods are special methods that automatically get called as a part of a component's life cycle in React. They allow you to run code at different points in a component's life, such as when a component is first created, when it is updated, and when it is destroyed.
+
+There are three categories of lifecycle methods in React:
+Mounting - Called when a component is first created and inserted into the DOM.
+Updatting - Called whenever one or more of the component’s props change.
+Unmounting - Calalled just before a component is removed from the DOM.
+
+15. useState() : Let’s you describe the state of your app 
+Whenever state updates, it triggers a re-render 
+which finally results in a DOM update 
+
+Syntax : const[state, setState] = useState(initialState)
+
+setState accepts a function that receives the previous state as its argument.
