@@ -87,3 +87,5 @@ which finally results in a DOM update
 Syntax : const[state, setState] = useState(initialState)
 
 setState accepts a function that receives the previous state as its argument.
+
+
