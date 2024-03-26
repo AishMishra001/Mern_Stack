@@ -88,4 +88,27 @@ Syntax : const[state, setState] = useState(initialState)
 
 setState accepts a function that receives the previous state as its argument.
 
+16. useEffect() :  The useEffect hook is a built-in hook in React that allows you to perform side effects, such as fetching data, updating the DOM, or updating global state, in a functional component.
 
+The useEffect hook has the following syntax:
+
+
+       useEffect(callback function , [dependencies])
+
+The callback parameter is a function that contains the side effects that you want to perform. The callback function will be called after the component has rendered, and it can be used to perform tasks such as fetching data, updating the DOM, or updating global state.
+
+The dependencies parameter is an optional array of variables that the useEffect hook should watch for changes. If any of the variables in the dependencies array change, the callback function will be called again. If the dependencies array is empty, the callback function will be called only once, after the component has rendered.
+
+17. useMemo() : The useMemo hook is a built-in hook in React that allows you to memoize a value, which is a value that is only recalculated when its dependencies change. The useMemo hook is used to optimize the performance of a component by reducing the number of unnecessary re-calculations and re-renders.
+
+The useMemo hook has the following syntax : 
+       const memoizedValue = useMemo(callback, dependencies)
+
+The callback parameter is a function that contains the value that you want to memoize. The callback function will be called after the component has rendered, and it will return the memoized value. 
+
+18. useCallback() : The useCallback hook is a built-in hook in React that allows you to memoize a function, which is a function that is only recreated when its dependencies change. The useCallback hook is used to optimize the performance of a component by reducing the number of unnecessary re-creations and re-renders.
+
+The useCallback hook has the following syntax:
+const memoizedFunction = useCallback(callback, dependencies)
+
+The callback parameter is a function that you want to memoize. The callback function will be returned as the memoizedFunction. The dependencies parameter is an optional array of variables that the useCallback hook should watch for changes. If any of the variables in the dependencies array change, the memoizedFunction will be recreated with the new callback function. If the dependencies array is empty, the memoizedFunction will be created only once, and it will not be recreated again.
