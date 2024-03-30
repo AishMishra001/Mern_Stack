@@ -1,30 +1,43 @@
+import { useMemo } from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react'
 
 
 function App() {
-  const [ exchangeData , setexchangeData] = useState({})
+  const [ exchangeData1 , setExchangeData1] = useState({})
+  const [ exchangeData2 , setExchangeData2] = useState({})
   const [ bankData , setBankData ] = useState({})
 
-  console.log("hi there re-render") ; 
 
   useEffect(()=>{
-      setTimeout(() => {
-        setBankData(
+      
+        setExchangeData1(
          { returns : 100} 
         )
-      }, 1000);
+      
   },[])
 
   useEffect(()=>{
-      setTimeout(() => {
-        setexchangeData(
+     
+        setExchangeData2(
          { returns : 100} 
         )
-      }, 3000);
+    
   },[])
 
-  const creditValue = (exchangeData.returns  +  bankData.returns) * 0.3 ;  
+  useEffect(()=>{
+   setInterval(() => {
+     setBankData({
+      returns : 100 
+     })
+  },[5000]);
+})
+
+const cryptoReturns = useMemo(()=>{
+   return exchangeData1.returns  +  exchangeData2.returns  
+},[exchangeData1,exchangeData2])
+  
+const creditValue = (cryptoReturns + bankData.returns)* 0.3 ; 
 
   return (
     <div>
