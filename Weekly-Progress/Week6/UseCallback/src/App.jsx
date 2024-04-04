@@ -6,7 +6,7 @@ function App() {
 
  const wtf = useCallback(()=>{
   console.log('what the fuck!!') ; 
- },[])
+ },[])  
   return <div>
       <ButtonComponent inputFunction={wtf}></ButtonComponent>
       <button onClick={

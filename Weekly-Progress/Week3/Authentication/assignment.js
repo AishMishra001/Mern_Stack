@@ -49,7 +49,7 @@ const ALL_USERS = [
 function userExists(username, password) {
   return ALL_USERS.some(user => username === user.username && password === user.password);
 }
-
+jwtSecret
 app.post("/signin", function (req, res) {
   const username = req.body.username;
   const password = req.body.password;
