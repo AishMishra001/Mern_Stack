@@ -113,4 +113,62 @@ const memoizedFunction = useCallback(callback, dependencies)
 
 The callback parameter is a function that you want to memoize. The callback function will be returned as the memoizedFunction. The dependencies parameter is an optional array of variables that the useCallback hook should watch for changes. If any of the variables in the dependencies array change, the memoizedFunction will be recreated with the new callback function. If the dependencies array is empty, the memoizedFunction will be created only once, and it will not be recreated again.
 
-19."memo" lets you skip re-rendering a component when its props are unchanged.
+19. "memo" lets you skip re-rendering a component when its props are unchanged.
+
+20. UseRef() : useRef in React
+
+useRef is a built-in hook in React that allows you to create a mutable reference object that persists across re-renders.
+The primary purpose of useRef is not to directly trigger re-renders, but rather to store values that don't influence the component's rendering behavior.
+It provides a way to access and manipulate DOM elements directly, manage focus state, create timers or intervals, and store mutable data within a component.
+Key Characteristics:
+
+Mutable: The value stored in the reference object created by useRef can be changed over time without causing re-renders.
+Persistence: The reference object itself persists across re-renders, meaning its current property retains its value.
+Use Cases:
+
+Accessing DOM Elements (Reference Concept):
+
+useRef can create a reference to a DOM element within your JSX using the ref prop. This allows you to interact with the element directly in your component's code, for example, to focus an input field on mount:
+JavaScript
+import React, { useRef } from 'react';
+
+function MyComponent() {
+  const inputRef = useRef(null);
+
+  const handleFocus = () => {
+    if (inputRef.current) {
+      inputRef.current.focus();
+    }
+  };
+
+  return (
+    <div>
+      <input ref={inputRef} />
+      <button onClick={handleFocus}>Focus Input</button>
+    </div>
+  );
+}
+Use code with caution.
+Tracking Additional Information Beyond State (useState Limitation):
+
+In some cases, you might want to track information that doesn't necessarily need to trigger re-renders. useState is ideal for state that drives the UI, but useRef comes in handy when you need something extra.
+An example is tracking the actual number of renders a component has undergone. Using useState for this purpose might cause unnecessary re-renders, as updating the state would trigger a re-render each time. useRef can effectively track this without causing re-renders:
+JavaScript
+import React, { useRef } from 'react';
+
+function MyComponent() {
+  const countOfRenders = useRef(0);
+
+  // ... (other component logic)
+
+  React.useEffect(() => {
+    countOfRenders.current = countOfRenders.current + 1; // Update ref on initial render
+  }, []); // Empty dependency array ensures it runs only once
+
+  return (
+    <div>
+      {/* ... (component content) */}
+      <p>This component has rendered {countOfRenders.current} times.</p>
+    </div>
+  );
+}
