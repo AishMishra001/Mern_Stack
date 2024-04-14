@@ -17,4 +17,8 @@ The useNavigate hook is a part of the react-router-dom library in React. It is u
 
 6. Note that useNavigate() works when it is under a parent <BrowserRouter> component.
 
-7.Lazy Loading:  It's a technique used to improve the performance of a web application by loading only the necessary code and data when it is needed, rather than loading everything at once. In React, lazy loading can be achieved using the React.lazy function and the Suspense component.
+7. Lazy Loading:  It's a technique used to improve the performance of a web application by loading only the necessary code and data when it is needed, rather than loading everything at once. In React, lazy loading can be achieved using the React.lazy function and the Suspense component.
+
+8. Note that when you are appling lazy loading, you have to wrap the component with <Suspense> component. Also you have to export the component as default so that object destructing can be avoided . 
+
+9. The Suspense component is a built-in component in React that allows you to specify a fallback UI to be displayed while a component is being loaded asynchronously using the React.lazy function.
