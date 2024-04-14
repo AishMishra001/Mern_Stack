@@ -1,34 +1,45 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import './App.css'
+import { CountContext } from './context'
+import { useContext } from 'react'
 
 function App() {
   const [count, setCount] = useState(0)
 
+  // wrap anyone that wants to use the teleported value inside a provider
   return (
     <>
-      <Count count={count} setCount={setCount}>
-        </Count>    
+      <CountContext.Provider value={count}>
+        <Count setCount={setCount} />
+      </CountContext.Provider>
     </>
   )
 }
-// here Count component don't actually need setCount but as it's child Buttons needs it is the just being a mediator between the two which is bad practice it condition is called prop drilling . 
-function Count({count,setCount}){
+
+function Count({ setCount }) {
   return <div>
-    <h1>Count: {count}</h1>
-  <Buttons count={count} setCount={setCount}>
-          </Buttons>
+    <CountRenderer />
+    <Buttons setCount={setCount}>
+    </Buttons>
   </div>
 }
 
-function Buttons({count,setCount}){
+
+function CountRenderer() {
+  const count = useContext(CountContext);
   return <div>
-    <button onClick={()=>{
-      setCount(count +1)
+    {count}
+  </div>
+}
+function Buttons({ setCount }) {
+  const count = useContext(CountContext)
+  return <div>
+    <button onClick={() => {
+      setCount(count + 1)
     }}>Increment</button>
-    <button onClick={()=>{
-      setCount(count -1)
+    <button onClick={() => {
+      setCount(count - 1)
     }}>Decrement</button>
   </div>
 }
