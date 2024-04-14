@@ -11,3 +11,10 @@ In React, client-side routing is typically implemented using the react-router li
 3. Client Side Bundle : A client-side bundle is a collection of JavaScript, CSS, and other assets that are loaded by the browser when a user visits a web page. In the context of React, a client-side bundle typically includes the React library, the application code, and any third-party libraries or dependencies.
 
 4. Routing : Routing in React is the process of navigating between different views or pages in a single-page application (SPA). In React, routing is typically implemented using the react-router library, which provides a set of components and hooks for defining routes, navigating between them, and accessing route parameters and query strings.
+
+5. UseNavigate() hook : 
+The useNavigate hook is a part of the react-router-dom library in React. It is used to navigate between different routes in a React application. The useNavigate hook returns a function that can be used to navigate to a different route.
+
+6. Note that useNavigate() works when it is under a parent <BrowserRouter> component.
+
+7.Lazy Loading:  It's a technique used to improve the performance of a web application by loading only the necessary code and data when it is needed, rather than loading everything at once. In React, lazy loading can be achieved using the React.lazy function and the Suspense component.
