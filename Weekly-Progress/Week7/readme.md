@@ -22,3 +22,18 @@ The useNavigate hook is a part of the react-router-dom library in React. It is u
 8. Note that when you are appling lazy loading, you have to wrap the component with <Suspense> component. Also you have to export the component as default so that object destructing can be avoided . 
 
 9. The Suspense component is a built-in component in React that allows you to specify a fallback UI to be displayed while a component is being loaded asynchronously using the React.lazy function.
+
+
+## Prop Drilling 
+
+1. The rule of thumb is to push down state as much as possible to the Least Common Ansester (LCA) of the components that need it.
+
+2. Prop drilling is a term used to describe the process of passing props down through multiple levels of a component tree in React. This can make the code harder to maintain and understand, as it requires passing props through components that do not need to use them.
+
+3. Note that prop drilling has nothing to do with re-rendering .
+
+4. The problem with passing props ; 
+
+Passing props is a great way to explicitly pipe data through your UI tree to the components that use it.
+
+But passing props can become verbose and inconvenient when you need to pass some prop deeply through the tree, or if many components need the same prop. The nearest common ancestor could be far removed from the components that need data, and lifting state up that high can lead to a situation called “prop drilling”.
