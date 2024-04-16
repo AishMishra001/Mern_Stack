@@ -63,3 +63,30 @@ to create it we use : createContext() in a file and export it .
 and 
 
 to use it we use : useContext() 
+
+10. Why do use ContextApi ?? 
+
+A. To make rendering more performant (NO)
+
+B. To make syntax clean and get rid of prop drilling (YES)
+
+C. To make it easier to share data between components (YES)
+
+D. To make it easier to share data between components (YES)
+
+
+### Problem with Context api : 
+
+------------ doesn't fixes the re-rendering problem , only fixed prop drilling .----------- 
+
+## State Management Library : 
+
+1. Recoil : 
+
+  const [count,setCount] = useState() ;
+
+  from here : useRecoilState() is same as useState() 
+              count is same as useRecoilValue(Atom_Name) 
+              setCount is same as useSetRecoilState() 
+
+. <RecoilRoot> : Any component that uses the recoil logic should be wrap inside a <RecialRoot> </RecoilRoot>              
