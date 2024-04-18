@@ -90,3 +90,13 @@ D. To make it easier to share data between components (YES)
               setCount is same as useSetRecoilState() 
 
 . <RecoilRoot> : Any component that uses the recoil logic should be wrap inside a <RecialRoot> </RecoilRoot>              
+
+state in a normal react application is atom in recoil 
+
+2. In Recoil, atoms are used to represent the state of your application. An atom is a piece of state that can be read and written by any component in your application.
+
+3. To create an atom in Recoil, you can use the atom function, which takes an object with the following properties:
+
+key: A unique string that identifies the atom.
+
+default: The initial value of the atom.
