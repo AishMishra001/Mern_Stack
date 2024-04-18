@@ -100,3 +100,15 @@ state in a normal react application is atom in recoil
 key: A unique string that identifies the atom.
 
 default: The initial value of the atom.
+
+4. selectors : In Recoil, selectors are used to derive data from atoms. A selector is a function (selector({
+  
+})) that takes one or more atoms as input and returns a derived value.
+
+To create a selector in Recoil, you can use the selector function, which takes an object with the following properties:
+
+key: A unique string that identifies the selector.
+get: A function that returns the derived value of the selector.
+set (optional): A function that sets the value of the selector. 
+
+5.
