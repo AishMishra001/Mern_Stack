@@ -111,4 +111,17 @@ key: A unique string that identifies the selector.
 get: A function that returns the derived value of the selector.
 set (optional): A function that sets the value of the selector. 
 
-5.
+5. Async Data Queries : Say we have a list of data that we have to render on screen using recoil . 
+
+so then in the atom defination the default value will become a selector like this : 
+
+const UserInfoState = atom({
+  key: 'UserInfo',
+  default: selector({
+    key: 'UserInfo/Default',
+    get: ({get}) => myFetchUserInfo(get(currentUserIDState)),
+  }),
+}); 
+
+and as selector can take two values key and get , so we can use get to fetch the data from the server . 
+
