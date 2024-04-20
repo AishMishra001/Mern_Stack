@@ -20,3 +20,4 @@ export const totalNotificationSelector = selector({
         allNotifications.messaging
     }
 })
+
