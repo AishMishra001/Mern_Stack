@@ -125,3 +125,10 @@ const UserInfoState = atom({
 
 and as selector can take two values key and get , so we can use get to fetch the data from the server . 
 
+6. 
+
+7. 
+
+## Axios library : 
+
+1. rfce : vc code shortcut to make function component 
