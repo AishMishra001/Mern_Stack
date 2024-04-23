@@ -1,5 +1,5 @@
 {
-  "name": "tailwind-css",
+  "name": "playontailwind",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -14,7 +14,6 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@storybook/builder-vite": "^8.0.8",
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
     "@vitejs/plugin-react": "^4.2.1",
