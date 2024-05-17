@@ -77,10 +77,6 @@ function App() {
   );
 }
 
-// just checking the github setup
-// asasda
-
-// sd
 
 
 export default App;
