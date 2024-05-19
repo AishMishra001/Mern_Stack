@@ -39,3 +39,6 @@ export function Assignment2() {
 
 
 // gssoc giving f's ...
+// can't do it again and again bruhhh 
+
+// int 
