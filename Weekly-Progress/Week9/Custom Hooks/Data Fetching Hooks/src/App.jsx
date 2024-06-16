@@ -5,22 +5,44 @@ import axios from 'axios' ;
 
 // https://sum-server.100xdevs.com/todos
 
-function useTodos(){
+function useTodos(time){
 
   const[todos , setTodos ] = useState([]) 
+  const[loading , setLoading ] = useState(true)
   
-  useEffect(()=>{
+ const value =  useEffect(()=>{
+  setInterval(()=>{
     axios.get('https://sum-server.100xdevs.com/todos')
     .then(res=>{
       setTodos(res.data.todos)
+      setLoading(false)
     })
-  },[])
+  },time*1000)
+  axios.get('https://sum-server.100xdevs.com/todos')
+  .then(res=>{
+    setTodos(res.data.todos)
+    setLoading(false)
+  })
 
-  return todos ; 
+// cleanup function 
+
+  return ( ()=>{
+    clearInterval(value)
+  })
+},[])
+
+
+
+return {todos,loading} ; 
 }
+
 function App(){
 
-   const todos = useTodos() ; 
+   const {todos,loading} = useTodos(5) ; 
+
+   if(loading){
+      return <h1>Loading...</h1>
+   }
   return(
     <>
      {todos.map(todo=><Render todo={todo}/>)}
@@ -28,7 +50,7 @@ function App(){
   )
 }
 
-function  Render({todo}){
+function Render({todo}){
   return(
       <>
       <h1>{todo.title}</h1>
