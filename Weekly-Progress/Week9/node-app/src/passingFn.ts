@@ -7,3 +7,5 @@ function runAfter1sec(fn : ()=>void){
 runAfter1sec(()=>{
   console.log("Hello World");
 })
+
+const something = (name) => `Hello, ${name}!`;
