@@ -11,3 +11,5 @@ make : "rootDir" : "./src"
        "outDir"  : "./dist"
 
 Ideally we will only push the rootDir (src folder) to github and put the dist folder in .gitignore        
+
+![NOTES](typescript1.png)
