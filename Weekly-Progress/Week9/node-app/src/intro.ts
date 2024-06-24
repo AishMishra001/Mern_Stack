@@ -23,3 +23,4 @@ function isLegal(age:number):boolean{
 }
 
 let x = isLegal(18) ; 
+

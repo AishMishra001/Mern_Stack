@@ -8,4 +8,4 @@ runAfter1sec(()=>{
   console.log("Hello World");
 })
 
-const something = (name) => `Hello, ${name}!`;
+const something = (name:string) => `Hello, ${name}!`;
