@@ -33,3 +33,4 @@ console.log(isValid([{
   name : "Amit" ,
   age : 17
 }]))
+
