@@ -24,4 +24,4 @@ function insertUser(username, password, firstname, lastname) {
         console.log(res);
     });
 }
-insertUser("aishlunatic002@gmail.com", "342324233545", "Ronit", "Mishra");
+insertUser("aishlunatic003@gmail.com", "342344233545", "Ronak", "Mishra");

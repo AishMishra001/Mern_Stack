@@ -16,4 +16,4 @@ async function insertUser(username: string, password: string, firstname: string,
 }
 
 
-insertUser("aishlunatic001@gmail.com","342343545","Aish","Mishra") ; 
+insertUser("aishlunatic003@gmail.com","342344233545","Ronak","Mishra") ; 
