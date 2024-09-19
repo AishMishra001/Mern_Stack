@@ -12,7 +12,9 @@
  */
 
 export default {
-	async fetch(request, env, ctx): Promise<Response> {
-		return new Response('Hello World!');
+	async fetch(request, env, ctx){
+		return Response.json({
+			msg : "Hare Krishna"
+		});
 	},
 } satisfies ExportedHandler<Env>;
