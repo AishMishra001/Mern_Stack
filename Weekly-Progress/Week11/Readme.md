@@ -38,3 +38,20 @@ step 1 : For intializing the app :
 
 
 To add a 8080 port we have to change the inbound rules  of the security group of the ec2 instance 
+
+
+# How can u keep running a node js server even if you close your pc : 
+
+command : 
+```
+npm i -g pm2    
+```
+ here  pm2 is a process manager for node js and g is global 
+
+ the process manager will keep running the process even if u close the machine 
+
+ then : 
+
+ ```
+ pm2 start index ( file_name )
+ ```
