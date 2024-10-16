@@ -35,3 +35,7 @@ You typically can't use S3 links directly due to several reasons:
 4. Cost: Direct access to S3 may increase costs because it lacks the optimizations (like caching) that a CDN like CloudFront provides, potentially leading to more frequent requests directly to S3.
 
 5. Complex URLs: S3 object URLs can be long and complex, not ideal for use in applications or public sharing without using shortened links or CloudFront distributions.
+
+## The Solution is --> CDN ( content delivery network )
+
+A Content Delivery Network (CDN) is a network of servers distributed across various geographical locations to deliver web content faster and more efficiently to users.
