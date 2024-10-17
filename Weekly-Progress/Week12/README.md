@@ -38,4 +38,8 @@ You typically can't use S3 links directly due to several reasons:
 
 ## The Solution is --> CDN ( content delivery network )
 
-A Content Delivery Network (CDN) is a network of servers distributed across various geographical locations to deliver web content faster and more efficiently to users.
+A Content Delivery Network (CDN) is a network of servers distributed across various geographical locations to deliver web content faster and more efficiently to users. Is using this s3 link directly is a good practice 
+
+``` note that you can't do is for backends ``` 
+
+![image.png](./image.png)
