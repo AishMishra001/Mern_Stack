@@ -40,6 +40,21 @@ You typically can't use S3 links directly due to several reasons:
 
 A Content Delivery Network (CDN) is a network of servers distributed across various geographical locations to deliver web content faster and more efficiently to users. Is using this s3 link directly is a good practice 
 
-``` note that you can't do is for backends ``` 
+``` note that you can't do is for backends because for backends it will be user specific data so it can of backends edge networks works``` 
 
 ![image.png](./image.png)
+
+
+### Steps to distribute your react project 
+
+say u have a already created react app 
+
+run : 
+
+`` npm run build `` 
+
+this will crate the html , css and js file 
+
+`` npm install -g serve``
+
+then run ``serve`` 
