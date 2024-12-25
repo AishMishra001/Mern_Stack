@@ -58,3 +58,14 @@ this will crate the html , css and js file
 `` npm install -g serve``
 
 then run ``serve`` 
+
+## Advance Typescript API 
+
+
+Bootstraping typescript application : 
+
+npm init -y : intialise an empty "package.json"
+
+npx tsc --init  : used to generate a tsconfig.json 
+
+tsc -b : compiler your js code in ts 

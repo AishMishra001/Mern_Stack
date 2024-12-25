@@ -8,4 +8,10 @@ NextJS was a framework that was introduced because of some minor inconviniences 
 2. React does not provide out of the box routing (you have to use react-router-dom)
 3. React is not SEO Optimised 
     : not exactly true today because of React Server components
-4. Waterfalling problem
+4. Waterfalling problem 
+
+
+
+## Properties : 
+
+1. File Based Routing : 
