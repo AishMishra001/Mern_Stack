@@ -7,6 +7,7 @@ async function getBlogs(){
   return response.data ; 
 }
 
+
 export default async function Blogs(){
 
   const blogs = await getBlogs() ; 
