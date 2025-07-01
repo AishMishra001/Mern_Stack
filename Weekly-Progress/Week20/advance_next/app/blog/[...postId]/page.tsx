@@ -1,7 +1,9 @@
-import axios from 'axios' ; 
 
-
-export default async function BlogPage({params} : any ){
+export default async function BlogPage({params} : {
+  params :  Promise<{
+     postId : string
+  }> 
+}){
 
   const postId = (await params).postId ; 
  
