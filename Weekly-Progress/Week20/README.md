@@ -17,3 +17,14 @@ This makes the pages super fast and cache-friendly, since they don’t need to r
 3. You want ultra-fast load time
 
 4. Example: Blogs, Docs, Marketing pages, Landing pages
+
+## Next-Auth 
+
+`npm install next-auth` 
+
+#### what all we learned : 
+
+1. login with credentials 
+2. provider 
+3. login with google , github , etc 
+4. useSession , SessionProvider , getServiceSession 
